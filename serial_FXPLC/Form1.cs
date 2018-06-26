@@ -17,6 +17,7 @@ namespace serial_FXPLC
         mitsubishi mit;
         bool isYPortOpen = false;//Y口打开标志
         bool isSerialPortOpen = false; //串口打开标志
+        Char[] xPortStatus;
         public Form1()
         {
             InitializeComponent(); 
@@ -25,6 +26,7 @@ namespace serial_FXPLC
             portsComboBox.Text = ConfigurationManager.AppSettings["portname"];
             
         }
+        
 
   
         //打开/关闭串口
@@ -45,6 +47,8 @@ namespace serial_FXPLC
                     isSerialPortOpen = true;
                     openClosePortButton.Text = "关闭";
                     toolStripStatusLabel1.Text = "串口已打开";
+                    xPortStatus = mit.xStatus;
+                    statusX0Label.Text = new string( xPortStatus);
                     Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     cfg.AppSettings.Settings["portname"].Value = portsComboBox.Text;
                     cfg.Save();
@@ -182,11 +186,33 @@ namespace serial_FXPLC
             OpenCloseYPort("y15", openCloseY17Button);
         }
         #endregion
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-            statusX.Text = Encoding.UTF8.GetString(mit.m_rData);
-            //statusX.Text=mit.readX();
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mit == null)
+            {
+                this.Close();
+            }
+            else
+            {
+                mit.stop();
+                this.Close();
+            }
+                
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (mit == null)
+            { }
+            else
+            {
+                try
+                { mit.stop(); }
+                finally
+                { }
+            }
+
         }
     }
 }

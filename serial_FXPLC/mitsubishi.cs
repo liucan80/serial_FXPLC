@@ -25,7 +25,7 @@ namespace serial_FXPLC
         public byte[] m_wData, m_rData;    //循环写和读数据
         char[] m_WData;    //循环写数据转换格式
         bool circle = false;    //是否循环读写,判断不同字节长度
-
+        public Char[] xStatus = null;
 
         #region mitsubishi类构造函数
         public mitsubishi(string portName, int sendA, int sendL, int revA, int revL)    //（串口号、写入起始地址、写入字节长度、读取起始地址、读取字节长度）
@@ -48,7 +48,7 @@ namespace serial_FXPLC
             m_wData = new byte[sendL];
             m_rData = new byte[revL];
             m_WData = new char[sendL * 2];
-
+            
             if (!m_sp.IsOpen)
             {
                 try
@@ -99,7 +99,7 @@ namespace serial_FXPLC
                     }
 
                     //有排队先完成
-                    //readX("x");
+                    xStatus= readX();
                     //m_First();
 
                     //循环写部分
@@ -651,6 +651,7 @@ namespace serial_FXPLC
         }
         #endregion
 
+        //检查PLC是否已经连接
         public bool IsFXPLCConneted()
         {
             if (m_sp.IsOpen)
@@ -661,9 +662,9 @@ namespace serial_FXPLC
             { return false; }
         }
 
-        public string readX()
+        public Char[] readX()
         {
-            string outstring;
+            Char[] outChar;
             string textData = "02 30 30 30 38 30 30 33 03 35 45";
             string[] grp = textData.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -675,9 +676,38 @@ namespace serial_FXPLC
             }
 
             m_sp.Write(list.ToArray(), 0, list.Count);
-            Thread.Sleep(200);
-           outstring=m_sp.ReadExisting();
-            return outstring;
+           
+            //MessageBox.Show("已发送成功!");
+            for (int i = 0; i < 5; i++)
+            {
+                Thread.Sleep(100);
+                int Len = m_sp.BytesToRead;
+                if (Len > 0)
+                {
+                    i = 5;  //跳出循环
+                    char[] RecieveBuf = new char[Len];
+                    m_sp.Read(RecieveBuf, 0, Len);
+
+                    if (Len == 1)   //非写入或出错状态
+                    {
+                        outChar = RecieveBuf;
+                      
+                    }
+                    else   //写入状态，读取返回数据
+                    {
+                       
+                            Char[] outChar2 = new Char[Len - 4];
+                            Array.Copy(RecieveBuf, 1, outChar2, 0, Len - 4);
+                            outChar = outChar2;
+                            
+                              return outChar;
+                    }
+                }
+               
+              
+            }
+            return null;
+           
         }
 
       

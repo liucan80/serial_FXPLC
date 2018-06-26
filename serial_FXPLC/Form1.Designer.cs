@@ -35,7 +35,7 @@ namespace serial_FXPLC
             this.openClosePortButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.statusX = new System.Windows.Forms.Label();
+            this.statusX0Label = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.openCloseY17Button = new System.Windows.Forms.Button();
             this.openCloseY7Button = new System.Windows.Forms.Button();
@@ -55,7 +55,6 @@ namespace serial_FXPLC
             this.openCloseY0Button = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
@@ -85,7 +84,7 @@ namespace serial_FXPLC
             // 
             // openClosePortButton
             // 
-            this.openClosePortButton.Location = new System.Drawing.Point(26, 135);
+            this.openClosePortButton.Location = new System.Drawing.Point(6, 257);
             this.openClosePortButton.Name = "openClosePortButton";
             this.openClosePortButton.Size = new System.Drawing.Size(75, 23);
             this.openClosePortButton.TabIndex = 3;
@@ -107,24 +106,24 @@ namespace serial_FXPLC
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.statusX);
+            this.groupBox2.Controls.Add(this.statusX0Label);
             this.groupBox2.Location = new System.Drawing.Point(269, 26);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(469, 133);
+            this.groupBox2.Size = new System.Drawing.Size(469, 189);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "输入状态";
             // 
-            // statusX
+            // statusX0Label
             // 
-            this.statusX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statusX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusX.Location = new System.Drawing.Point(17, 26);
-            this.statusX.Name = "statusX";
-            this.statusX.Size = new System.Drawing.Size(446, 18);
-            this.statusX.TabIndex = 0;
-            this.statusX.Text = "X0";
-            this.statusX.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.statusX0Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX0Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX0Label.Location = new System.Drawing.Point(17, 26);
+            this.statusX0Label.Name = "statusX0Label";
+            this.statusX0Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX0Label.TabIndex = 0;
+            this.statusX0Label.Text = "X0";
+            this.statusX0Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox3
             // 
@@ -326,16 +325,7 @@ namespace serial_FXPLC
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.退出ToolStripMenuItem.Text = "退出";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(275, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -369,7 +359,6 @@ namespace serial_FXPLC
             this.ClientSize = new System.Drawing.Size(779, 591);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -377,6 +366,7 @@ namespace serial_FXPLC
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -417,8 +407,7 @@ namespace serial_FXPLC
         private System.Windows.Forms.Button openCloseY12Button;
         private System.Windows.Forms.Button openCloseY11Button;
         private System.Windows.Forms.Button openCloseY10Button;
-        private System.Windows.Forms.Label statusX;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label statusX0Label;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.StatusStrip statusStrip2;
