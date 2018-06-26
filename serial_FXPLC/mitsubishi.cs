@@ -100,20 +100,20 @@ namespace serial_FXPLC
 
                     //有排队先完成
                     //readX("x");
-                    m_First();
+                    //m_First();
 
                     //循环写部分
-                    circle = true;
-                    for (int i = 0; i < m_sendLen; i++)
-                    {
-                        m_WData[i * 2] = Tran2(m_wData[i] / 0x10);
-                        m_WData[i * 2 + 1] = Tran2(m_wData[i] % 0x10);
-                    }
-                    char[] m_write = SendData('d', m_sendAddr, 'w', m_WData);
-                    if (m_write[0] - 6 != 0)
-                    {
-                        MessageBox.Show("循环写入数据出错！");
-                    }
+                    //circle = true;
+                    //for (int i = 0; i < m_sendLen; i++)
+                    //{
+                    //    m_WData[i * 2] = Tran2(m_wData[i] / 0x10);
+                    //    m_WData[i * 2 + 1] = Tran2(m_wData[i] % 0x10);
+                    //}
+                    //char[] m_write = SendData('d', m_sendAddr, 'w', m_WData);
+                    //if (m_write[0] - 6 != 0)
+                    //{
+                    //    MessageBox.Show("循环写入数据出错！");
+                    //}
 
                     //有排队先完成
                     m_First();
@@ -121,19 +121,19 @@ namespace serial_FXPLC
                     //readX("x0");
 
                     //循环读部分
-                    circle = true;
-                    char[] m_read = SendData('d', m_recieveAddr, 'r', m_WData);
-                    if (m_read.Length / 2 == m_recieveLen)
-                    {
-                        for (int i = 0; i < m_read.Length; i = i + 2)
-                        {
-                            m_rData[i / 2] = (byte)(Tran1(m_read[i]) * 0x10 + Tran1(m_read[i + 1]));
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("循环读出数据出错！");
-                    }
+                    //circle = true;
+                    //char[] m_read = SendData('d', m_recieveAddr, 'r', m_WData);
+                    //if (m_read.Length / 2 == m_recieveLen)
+                    //{
+                    //    for (int i = 0; i < m_read.Length; i = i + 2)
+                    //    {
+                    //        m_rData[i / 2] = (byte)(Tran1(m_read[i]) * 0x10 + Tran1(m_read[i + 1]));
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("循环读出数据出错！");
+                    //}
 
                 }
             }
@@ -661,8 +661,9 @@ namespace serial_FXPLC
             { return false; }
         }
 
-        public int readX(string xport)
+        public string readX()
         {
+            string outstring;
             string textData = "02 30 30 30 38 30 30 33 03 35 45";
             string[] grp = textData.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -674,8 +675,9 @@ namespace serial_FXPLC
             }
 
             m_sp.Write(list.ToArray(), 0, list.Count);
-            
-            return 0;
+            Thread.Sleep(200);
+           outstring=m_sp.ReadExisting();
+            return outstring;
         }
 
       

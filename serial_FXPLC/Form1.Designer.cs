@@ -121,7 +121,7 @@ namespace serial_FXPLC
             this.statusX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusX.Location = new System.Drawing.Point(17, 26);
             this.statusX.Name = "statusX";
-            this.statusX.Size = new System.Drawing.Size(50, 18);
+            this.statusX.Size = new System.Drawing.Size(446, 18);
             this.statusX.TabIndex = 0;
             this.statusX.Text = "X0";
             this.statusX.TextAlign = System.Drawing.ContentAlignment.TopCenter;

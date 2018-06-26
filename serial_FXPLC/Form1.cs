@@ -184,7 +184,9 @@ namespace serial_FXPLC
         #endregion
         private void button1_Click(object sender, EventArgs e)
         {
-            mit.readX("x0");
+
+            statusX.Text = Encoding.UTF8.GetString(mit.m_rData);
+            //statusX.Text=mit.readX();
         }
     }
 }
