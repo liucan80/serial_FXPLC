@@ -30,13 +30,39 @@ namespace serial_FXPLC
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.portsComboBox = new System.Windows.Forms.ComboBox();
             this.openClosePortButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.statusX0Label = new System.Windows.Forms.Label();
+            this.statusX27Label = new System.Windows.Forms.Label();
+            this.statusX17Label = new System.Windows.Forms.Label();
+            this.statusX07Label = new System.Windows.Forms.Label();
+            this.statusX26Label = new System.Windows.Forms.Label();
+            this.statusX16Label = new System.Windows.Forms.Label();
+            this.statusX06Label = new System.Windows.Forms.Label();
+            this.statusX25Label = new System.Windows.Forms.Label();
+            this.statusX15Label = new System.Windows.Forms.Label();
+            this.statusX05Label = new System.Windows.Forms.Label();
+            this.statusX24Label = new System.Windows.Forms.Label();
+            this.statusX14Label = new System.Windows.Forms.Label();
+            this.statusX04Label = new System.Windows.Forms.Label();
+            this.statusX23Label = new System.Windows.Forms.Label();
+            this.statusX13Label = new System.Windows.Forms.Label();
+            this.statusX03Label = new System.Windows.Forms.Label();
+            this.statusX22Label = new System.Windows.Forms.Label();
+            this.statusX12Label = new System.Windows.Forms.Label();
+            this.statusX02Label = new System.Windows.Forms.Label();
+            this.statusX21Label = new System.Windows.Forms.Label();
+            this.statusX11Label = new System.Windows.Forms.Label();
+            this.statusX01Label = new System.Windows.Forms.Label();
+            this.statusX20Label = new System.Windows.Forms.Label();
+            this.statusX10Label = new System.Windows.Forms.Label();
+            this.statusX00Label = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.openCloseY17Button = new System.Windows.Forms.Button();
             this.openCloseY7Button = new System.Windows.Forms.Button();
             this.openCloseY16Button = new System.Windows.Forms.Button();
@@ -58,6 +84,7 @@ namespace serial_FXPLC
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -106,27 +133,305 @@ namespace serial_FXPLC
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.statusX0Label);
-            this.groupBox2.Location = new System.Drawing.Point(269, 26);
+            this.groupBox2.Controls.Add(this.statusX27Label);
+            this.groupBox2.Controls.Add(this.statusX17Label);
+            this.groupBox2.Controls.Add(this.statusX07Label);
+            this.groupBox2.Controls.Add(this.statusX26Label);
+            this.groupBox2.Controls.Add(this.statusX16Label);
+            this.groupBox2.Controls.Add(this.statusX06Label);
+            this.groupBox2.Controls.Add(this.statusX25Label);
+            this.groupBox2.Controls.Add(this.statusX15Label);
+            this.groupBox2.Controls.Add(this.statusX05Label);
+            this.groupBox2.Controls.Add(this.statusX24Label);
+            this.groupBox2.Controls.Add(this.statusX14Label);
+            this.groupBox2.Controls.Add(this.statusX04Label);
+            this.groupBox2.Controls.Add(this.statusX23Label);
+            this.groupBox2.Controls.Add(this.statusX13Label);
+            this.groupBox2.Controls.Add(this.statusX03Label);
+            this.groupBox2.Controls.Add(this.statusX22Label);
+            this.groupBox2.Controls.Add(this.statusX12Label);
+            this.groupBox2.Controls.Add(this.statusX02Label);
+            this.groupBox2.Controls.Add(this.statusX21Label);
+            this.groupBox2.Controls.Add(this.statusX11Label);
+            this.groupBox2.Controls.Add(this.statusX01Label);
+            this.groupBox2.Controls.Add(this.statusX20Label);
+            this.groupBox2.Controls.Add(this.statusX10Label);
+            this.groupBox2.Controls.Add(this.statusX00Label);
+            this.groupBox2.Location = new System.Drawing.Point(326, 26);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(469, 189);
+            this.groupBox2.Size = new System.Drawing.Size(559, 297);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "输入状态";
             // 
-            // statusX0Label
+            // statusX27Label
             // 
-            this.statusX0Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statusX0Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusX0Label.Location = new System.Drawing.Point(17, 26);
-            this.statusX0Label.Name = "statusX0Label";
-            this.statusX0Label.Size = new System.Drawing.Size(64, 18);
-            this.statusX0Label.TabIndex = 0;
-            this.statusX0Label.Text = "X0";
-            this.statusX0Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.statusX27Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX27Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX27Label.Location = new System.Drawing.Point(359, 257);
+            this.statusX27Label.Name = "statusX27Label";
+            this.statusX27Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX27Label.TabIndex = 0;
+            this.statusX27Label.Text = "X27";
+            this.statusX27Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX17Label
+            // 
+            this.statusX17Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX17Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX17Label.Location = new System.Drawing.Point(178, 257);
+            this.statusX17Label.Name = "statusX17Label";
+            this.statusX17Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX17Label.TabIndex = 0;
+            this.statusX17Label.Text = "X17";
+            this.statusX17Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX07Label
+            // 
+            this.statusX07Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX07Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX07Label.Location = new System.Drawing.Point(17, 257);
+            this.statusX07Label.Name = "statusX07Label";
+            this.statusX07Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX07Label.TabIndex = 0;
+            this.statusX07Label.Text = "X7";
+            this.statusX07Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX26Label
+            // 
+            this.statusX26Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX26Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX26Label.Location = new System.Drawing.Point(359, 222);
+            this.statusX26Label.Name = "statusX26Label";
+            this.statusX26Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX26Label.TabIndex = 0;
+            this.statusX26Label.Text = "X26";
+            this.statusX26Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX16Label
+            // 
+            this.statusX16Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX16Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX16Label.Location = new System.Drawing.Point(178, 222);
+            this.statusX16Label.Name = "statusX16Label";
+            this.statusX16Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX16Label.TabIndex = 0;
+            this.statusX16Label.Text = "X16";
+            this.statusX16Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX06Label
+            // 
+            this.statusX06Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX06Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX06Label.Location = new System.Drawing.Point(17, 222);
+            this.statusX06Label.Name = "statusX06Label";
+            this.statusX06Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX06Label.TabIndex = 0;
+            this.statusX06Label.Text = "X6";
+            this.statusX06Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX25Label
+            // 
+            this.statusX25Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX25Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX25Label.Location = new System.Drawing.Point(359, 190);
+            this.statusX25Label.Name = "statusX25Label";
+            this.statusX25Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX25Label.TabIndex = 0;
+            this.statusX25Label.Text = "X25";
+            this.statusX25Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX15Label
+            // 
+            this.statusX15Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX15Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX15Label.Location = new System.Drawing.Point(178, 190);
+            this.statusX15Label.Name = "statusX15Label";
+            this.statusX15Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX15Label.TabIndex = 0;
+            this.statusX15Label.Text = "X15";
+            this.statusX15Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX05Label
+            // 
+            this.statusX05Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX05Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX05Label.Location = new System.Drawing.Point(17, 190);
+            this.statusX05Label.Name = "statusX05Label";
+            this.statusX05Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX05Label.TabIndex = 0;
+            this.statusX05Label.Text = "X5";
+            this.statusX05Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX24Label
+            // 
+            this.statusX24Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX24Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX24Label.Location = new System.Drawing.Point(359, 155);
+            this.statusX24Label.Name = "statusX24Label";
+            this.statusX24Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX24Label.TabIndex = 0;
+            this.statusX24Label.Text = "X24";
+            this.statusX24Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX14Label
+            // 
+            this.statusX14Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX14Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX14Label.Location = new System.Drawing.Point(178, 155);
+            this.statusX14Label.Name = "statusX14Label";
+            this.statusX14Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX14Label.TabIndex = 0;
+            this.statusX14Label.Text = "X14";
+            this.statusX14Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX04Label
+            // 
+            this.statusX04Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX04Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX04Label.Location = new System.Drawing.Point(17, 155);
+            this.statusX04Label.Name = "statusX04Label";
+            this.statusX04Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX04Label.TabIndex = 0;
+            this.statusX04Label.Text = "X4";
+            this.statusX04Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX23Label
+            // 
+            this.statusX23Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX23Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX23Label.Location = new System.Drawing.Point(359, 124);
+            this.statusX23Label.Name = "statusX23Label";
+            this.statusX23Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX23Label.TabIndex = 0;
+            this.statusX23Label.Text = "X23";
+            this.statusX23Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX13Label
+            // 
+            this.statusX13Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX13Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX13Label.Location = new System.Drawing.Point(178, 124);
+            this.statusX13Label.Name = "statusX13Label";
+            this.statusX13Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX13Label.TabIndex = 0;
+            this.statusX13Label.Text = "X13";
+            this.statusX13Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX03Label
+            // 
+            this.statusX03Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX03Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX03Label.Location = new System.Drawing.Point(17, 124);
+            this.statusX03Label.Name = "statusX03Label";
+            this.statusX03Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX03Label.TabIndex = 0;
+            this.statusX03Label.Text = "X3";
+            this.statusX03Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX22Label
+            // 
+            this.statusX22Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX22Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX22Label.Location = new System.Drawing.Point(359, 94);
+            this.statusX22Label.Name = "statusX22Label";
+            this.statusX22Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX22Label.TabIndex = 0;
+            this.statusX22Label.Text = "X22";
+            this.statusX22Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX12Label
+            // 
+            this.statusX12Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX12Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX12Label.Location = new System.Drawing.Point(178, 94);
+            this.statusX12Label.Name = "statusX12Label";
+            this.statusX12Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX12Label.TabIndex = 0;
+            this.statusX12Label.Text = "X12";
+            this.statusX12Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX02Label
+            // 
+            this.statusX02Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX02Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX02Label.Location = new System.Drawing.Point(17, 94);
+            this.statusX02Label.Name = "statusX02Label";
+            this.statusX02Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX02Label.TabIndex = 0;
+            this.statusX02Label.Text = "X2";
+            this.statusX02Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX21Label
+            // 
+            this.statusX21Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX21Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX21Label.Location = new System.Drawing.Point(359, 61);
+            this.statusX21Label.Name = "statusX21Label";
+            this.statusX21Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX21Label.TabIndex = 0;
+            this.statusX21Label.Text = "X21";
+            this.statusX21Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX11Label
+            // 
+            this.statusX11Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX11Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX11Label.Location = new System.Drawing.Point(178, 61);
+            this.statusX11Label.Name = "statusX11Label";
+            this.statusX11Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX11Label.TabIndex = 0;
+            this.statusX11Label.Text = "X11";
+            this.statusX11Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX01Label
+            // 
+            this.statusX01Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX01Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX01Label.Location = new System.Drawing.Point(17, 61);
+            this.statusX01Label.Name = "statusX01Label";
+            this.statusX01Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX01Label.TabIndex = 0;
+            this.statusX01Label.Text = "X1";
+            this.statusX01Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX20Label
+            // 
+            this.statusX20Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX20Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX20Label.Location = new System.Drawing.Point(359, 26);
+            this.statusX20Label.Name = "statusX20Label";
+            this.statusX20Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX20Label.TabIndex = 0;
+            this.statusX20Label.Text = "X20";
+            this.statusX20Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX10Label
+            // 
+            this.statusX10Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX10Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX10Label.Location = new System.Drawing.Point(178, 26);
+            this.statusX10Label.Name = "statusX10Label";
+            this.statusX10Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX10Label.TabIndex = 0;
+            this.statusX10Label.Text = "X10";
+            this.statusX10Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // statusX00Label
+            // 
+            this.statusX00Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statusX00Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusX00Label.Location = new System.Drawing.Point(17, 26);
+            this.statusX00Label.Name = "statusX00Label";
+            this.statusX00Label.Size = new System.Drawing.Size(64, 18);
+            this.statusX00Label.TabIndex = 0;
+            this.statusX00Label.Text = "X0";
+            this.statusX00Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.openCloseY17Button);
             this.groupBox3.Controls.Add(this.openCloseY7Button);
             this.groupBox3.Controls.Add(this.openCloseY16Button);
@@ -143,16 +448,34 @@ namespace serial_FXPLC
             this.groupBox3.Controls.Add(this.openCloseY1Button);
             this.groupBox3.Controls.Add(this.openCloseY10Button);
             this.groupBox3.Controls.Add(this.openCloseY0Button);
-            this.groupBox3.Location = new System.Drawing.Point(269, 221);
+            this.groupBox3.Location = new System.Drawing.Point(326, 330);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(469, 309);
+            this.groupBox3.Size = new System.Drawing.Size(559, 269);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "输出状态和控制";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(389, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(113, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            // 
             // openCloseY17Button
             // 
-            this.openCloseY17Button.Location = new System.Drawing.Point(251, 236);
+            this.openCloseY17Button.Location = new System.Drawing.Point(295, 236);
             this.openCloseY17Button.Name = "openCloseY17Button";
             this.openCloseY17Button.Size = new System.Drawing.Size(75, 23);
             this.openCloseY17Button.TabIndex = 0;
@@ -172,7 +495,7 @@ namespace serial_FXPLC
             // 
             // openCloseY16Button
             // 
-            this.openCloseY16Button.Location = new System.Drawing.Point(251, 207);
+            this.openCloseY16Button.Location = new System.Drawing.Point(295, 207);
             this.openCloseY16Button.Name = "openCloseY16Button";
             this.openCloseY16Button.Size = new System.Drawing.Size(75, 23);
             this.openCloseY16Button.TabIndex = 0;
@@ -192,7 +515,7 @@ namespace serial_FXPLC
             // 
             // openCloseY15Button
             // 
-            this.openCloseY15Button.Location = new System.Drawing.Point(251, 178);
+            this.openCloseY15Button.Location = new System.Drawing.Point(295, 178);
             this.openCloseY15Button.Name = "openCloseY15Button";
             this.openCloseY15Button.Size = new System.Drawing.Size(75, 23);
             this.openCloseY15Button.TabIndex = 0;
@@ -212,7 +535,7 @@ namespace serial_FXPLC
             // 
             // openCloseY14Button
             // 
-            this.openCloseY14Button.Location = new System.Drawing.Point(251, 149);
+            this.openCloseY14Button.Location = new System.Drawing.Point(295, 149);
             this.openCloseY14Button.Name = "openCloseY14Button";
             this.openCloseY14Button.Size = new System.Drawing.Size(75, 23);
             this.openCloseY14Button.TabIndex = 0;
@@ -232,7 +555,7 @@ namespace serial_FXPLC
             // 
             // openCloseY13Button
             // 
-            this.openCloseY13Button.Location = new System.Drawing.Point(251, 120);
+            this.openCloseY13Button.Location = new System.Drawing.Point(295, 120);
             this.openCloseY13Button.Name = "openCloseY13Button";
             this.openCloseY13Button.Size = new System.Drawing.Size(75, 23);
             this.openCloseY13Button.TabIndex = 0;
@@ -252,7 +575,7 @@ namespace serial_FXPLC
             // 
             // openCloseY12Button
             // 
-            this.openCloseY12Button.Location = new System.Drawing.Point(251, 91);
+            this.openCloseY12Button.Location = new System.Drawing.Point(295, 91);
             this.openCloseY12Button.Name = "openCloseY12Button";
             this.openCloseY12Button.Size = new System.Drawing.Size(75, 23);
             this.openCloseY12Button.TabIndex = 0;
@@ -272,7 +595,7 @@ namespace serial_FXPLC
             // 
             // openCloseY11Button
             // 
-            this.openCloseY11Button.Location = new System.Drawing.Point(251, 62);
+            this.openCloseY11Button.Location = new System.Drawing.Point(295, 62);
             this.openCloseY11Button.Name = "openCloseY11Button";
             this.openCloseY11Button.Size = new System.Drawing.Size(75, 23);
             this.openCloseY11Button.TabIndex = 0;
@@ -292,7 +615,7 @@ namespace serial_FXPLC
             // 
             // openCloseY10Button
             // 
-            this.openCloseY10Button.Location = new System.Drawing.Point(251, 33);
+            this.openCloseY10Button.Location = new System.Drawing.Point(295, 33);
             this.openCloseY10Button.Name = "openCloseY10Button";
             this.openCloseY10Button.Size = new System.Drawing.Size(75, 23);
             this.openCloseY10Button.TabIndex = 0;
@@ -316,7 +639,7 @@ namespace serial_FXPLC
             this.退出ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(779, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(948, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -331,9 +654,9 @@ namespace serial_FXPLC
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 569);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 624);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(779, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(948, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -345,18 +668,22 @@ namespace serial_FXPLC
             // 
             // statusStrip2
             // 
-            this.statusStrip2.Location = new System.Drawing.Point(0, 547);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 602);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(779, 22);
+            this.statusStrip2.Size = new System.Drawing.Size(948, 22);
             this.statusStrip2.TabIndex = 9;
             this.statusStrip2.Text = "statusStrip2";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(779, 591);
+            this.ClientSize = new System.Drawing.Size(948, 646);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox3);
@@ -371,6 +698,7 @@ namespace serial_FXPLC
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -407,10 +735,36 @@ namespace serial_FXPLC
         private System.Windows.Forms.Button openCloseY12Button;
         private System.Windows.Forms.Button openCloseY11Button;
         private System.Windows.Forms.Button openCloseY10Button;
-        private System.Windows.Forms.Label statusX0Label;
+        private System.Windows.Forms.Label statusX00Label;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label statusX27Label;
+        private System.Windows.Forms.Label statusX17Label;
+        private System.Windows.Forms.Label statusX07Label;
+        private System.Windows.Forms.Label statusX26Label;
+        private System.Windows.Forms.Label statusX16Label;
+        private System.Windows.Forms.Label statusX06Label;
+        private System.Windows.Forms.Label statusX25Label;
+        private System.Windows.Forms.Label statusX15Label;
+        private System.Windows.Forms.Label statusX05Label;
+        private System.Windows.Forms.Label statusX24Label;
+        private System.Windows.Forms.Label statusX14Label;
+        private System.Windows.Forms.Label statusX04Label;
+        private System.Windows.Forms.Label statusX23Label;
+        private System.Windows.Forms.Label statusX13Label;
+        private System.Windows.Forms.Label statusX03Label;
+        private System.Windows.Forms.Label statusX22Label;
+        private System.Windows.Forms.Label statusX12Label;
+        private System.Windows.Forms.Label statusX02Label;
+        private System.Windows.Forms.Label statusX21Label;
+        private System.Windows.Forms.Label statusX11Label;
+        private System.Windows.Forms.Label statusX01Label;
+        private System.Windows.Forms.Label statusX20Label;
+        private System.Windows.Forms.Label statusX10Label;
     }
 }
 

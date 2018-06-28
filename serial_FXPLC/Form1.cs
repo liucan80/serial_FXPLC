@@ -9,22 +9,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.Configuration;
-
+using System.Timers;
+using System.Diagnostics;
 namespace serial_FXPLC
 {
+   
     public partial class Form1 : Form
     {
-        mitsubishi mit;
+         mitsubishi mit;
         bool isYPortOpen = false;//Y口打开标志
         bool isSerialPortOpen = false; //串口打开标志
-        Char[] xPortStatus;
+        public static Char[] xPortStatus;
+
         public Form1()
         {
             InitializeComponent(); 
             portsComboBox.DataSource = SerialPort.GetPortNames();
             toolStripStatusLabel1.Text = "请连接PLC";
             portsComboBox.Text = ConfigurationManager.AppSettings["portname"];
-            
+            foreach (Control item in groupBox2.Controls)
+            {
+                item.Enabled = false;
+            }
+            foreach (Control item in groupBox3.Controls)
+            {
+                item.Enabled = false;
+            }
+
         }
         
 
@@ -37,34 +48,32 @@ namespace serial_FXPLC
                 {
                     string portName = portsComboBox.Text;
                     mit = new mitsubishi(portName, 0, 10, 10, 10);
-                    if (false)
-                     {
-                        mit.stop();
-                   
-                     }
-                    else
-                    {
+                  
                     isSerialPortOpen = true;
                     openClosePortButton.Text = "关闭";
                     toolStripStatusLabel1.Text = "串口已打开";
-                    xPortStatus = mit.xStatus;
-                    statusX0Label.Text = new string( xPortStatus);
+                switchControl(groupBox2);
+                switchControl(groupBox3);
+
+                timer1.Start();
+                    
                     Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     cfg.AppSettings.Settings["portname"].Value = portsComboBox.Text;
                     cfg.Save();
                     ConfigurationManager.RefreshSection("appSettings");
-
-                     }
+                
                    
                     
                 }
                 else
                 {
                     mit.stop();
-
-
-                    isSerialPortOpen = false;
-
+                    timer1.Stop();
+                    timer1.Dispose();
+                switchControl(groupBox2);
+                switchControl(groupBox3);
+                isSerialPortOpen = false;
+                    
                     openClosePortButton.Text = "打开";
                     toolStripStatusLabel1.Text = "串口已关闭";
             }
@@ -214,5 +223,72 @@ namespace serial_FXPLC
             }
 
         }
+
+
+ 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            xPortStatus = mit.xStatus;
+            string[] x4PortsStatus=new string[6];
+            for (int i = 0; i < xPortStatus.Length; i++)
+            {
+
+                x4PortsStatus[i] = System.Convert.ToString(Convert.ToInt32(xPortStatus[i].ToString(), 16), 2).PadLeft(4, '0');
+                //Debug.Print(x4PortsStatus[i]);
+            }
+            //Debug.Print( x4PortsStatus[0].ToArray()[1].ToString());
+
+            changeColor(statusX07Label, x4PortsStatus[0].ToArray()[0].ToString());
+            changeColor(statusX06Label, x4PortsStatus[0].ToArray()[1].ToString());
+            changeColor(statusX05Label, x4PortsStatus[0].ToArray()[2].ToString());
+            changeColor(statusX04Label, x4PortsStatus[0].ToArray()[3].ToString());
+            changeColor(statusX03Label, x4PortsStatus[1].ToArray()[0].ToString());
+            changeColor(statusX02Label, x4PortsStatus[1].ToArray()[1].ToString());
+            changeColor(statusX01Label, x4PortsStatus[1].ToArray()[2].ToString());
+            changeColor(statusX00Label, x4PortsStatus[1].ToArray()[3].ToString());
+            changeColor(statusX17Label, x4PortsStatus[2].ToArray()[0].ToString());
+            changeColor(statusX16Label, x4PortsStatus[2].ToArray()[1].ToString());
+            changeColor(statusX15Label, x4PortsStatus[2].ToArray()[2].ToString());
+            changeColor(statusX14Label, x4PortsStatus[2].ToArray()[3].ToString());
+            changeColor(statusX13Label, x4PortsStatus[3].ToArray()[0].ToString());
+            changeColor(statusX12Label, x4PortsStatus[3].ToArray()[1].ToString());
+            changeColor(statusX11Label, x4PortsStatus[3].ToArray()[2].ToString());
+            changeColor(statusX10Label, x4PortsStatus[3].ToArray()[3].ToString());
+            changeColor(statusX27Label, x4PortsStatus[4].ToArray()[0].ToString());
+            changeColor(statusX26Label, x4PortsStatus[4].ToArray()[1].ToString());
+            changeColor(statusX25Label, x4PortsStatus[4].ToArray()[2].ToString());
+            changeColor(statusX24Label, x4PortsStatus[4].ToArray()[3].ToString());
+            changeColor(statusX23Label, x4PortsStatus[5].ToArray()[0].ToString());
+            changeColor(statusX22Label, x4PortsStatus[5].ToArray()[1].ToString());
+            changeColor(statusX21Label, x4PortsStatus[5].ToArray()[2].ToString());
+            changeColor(statusX20Label, x4PortsStatus[5].ToArray()[3].ToString());
+
+
+            //statusX00Label.Text = new string(xPortStatus);
+        }
+        private  void switchControl(Control groupbox)
+        {
+            foreach (Control item in groupbox.Controls)
+            {
+                if (item.Enabled==true)
+                { item.Enabled = false; }
+                else
+                {
+                    item.Enabled = true;
+                }
+            }
+        }
+        private void changeColor(Label labelname,string isopen)
+        {
+            if (isopen == 1.ToString())
+            {
+                labelname.BackColor = Color.Red;
+            }
+            else
+            {
+                labelname.BackColor = Color.WhiteSmoke;
+            }
+        }
+
     }
 }

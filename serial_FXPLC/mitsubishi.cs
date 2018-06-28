@@ -700,6 +700,7 @@ namespace serial_FXPLC
                             Array.Copy(RecieveBuf, 1, outChar2, 0, Len - 4);
                             outChar = outChar2;
                             
+                        //Convert.ToString();
                               return outChar;
                     }
                 }
