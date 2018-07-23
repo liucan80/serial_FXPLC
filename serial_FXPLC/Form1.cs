@@ -23,6 +23,7 @@ namespace serial_FXPLC
 
         public Form1()
         {
+            //程序初始化
             InitializeComponent(); 
             portsComboBox.DataSource = SerialPort.GetPortNames();
             toolStripStatusLabel1.Text = "请连接PLC";
@@ -48,32 +49,25 @@ namespace serial_FXPLC
                 {
                     string portName = portsComboBox.Text;
                     mit = new mitsubishi(portName, 0, 10, 10, 10);
-                  
                     isSerialPortOpen = true;
                     openClosePortButton.Text = "关闭";
                     toolStripStatusLabel1.Text = "串口已打开";
-                switchControl(groupBox2);
-                switchControl(groupBox3);
-
-                timer1.Start();
-                    
+                    switchControl(groupBox2);
+                    switchControl(groupBox3);
+                    timer1.Start();
                     Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     cfg.AppSettings.Settings["portname"].Value = portsComboBox.Text;
                     cfg.Save();
                     ConfigurationManager.RefreshSection("appSettings");
-                
-                   
-                    
                 }
                 else
                 {
                     mit.stop();
                     timer1.Stop();
                     timer1.Dispose();
-                switchControl(groupBox2);
-                switchControl(groupBox3);
-                isSerialPortOpen = false;
-                    
+                    switchControl(groupBox2);
+                    switchControl(groupBox3);
+                    isSerialPortOpen = false;
                     openClosePortButton.Text = "打开";
                     toolStripStatusLabel1.Text = "串口已关闭";
             }
@@ -87,14 +81,13 @@ namespace serial_FXPLC
         {
             SerialPort port = new SerialPort();
             port.PortName = portname;
-            
             return port.IsOpen;
         }
 
         //打开Y输出点函数
         bool OpenCloseYPort(string yPort,Button yButton) //(要打开的口，触发的按钮)
         {
-    //首先检查是否已经连接到PLC
+            //首先检查是否已经连接到PLC
             if (mit.IsFXPLCConneted())
              {
                 if (isYPortOpen == false)
@@ -113,13 +106,14 @@ namespace serial_FXPLC
             else
             {
                 toolStripStatusLabel1.Text = "PLC未连接";
+                toolStripStatusLabel1.BackColor = Color.Yellow;
              }
 
 
             return true;
         }
 
-        #region
+        #region 控制Y输出口
         private void openCloseY0Button_Click(object sender, EventArgs e)
         {
             OpenCloseYPort("y0", openCloseY0Button);
@@ -196,6 +190,7 @@ namespace serial_FXPLC
         }
         #endregion
 
+        //菜单退出
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (mit == null)
@@ -210,6 +205,7 @@ namespace serial_FXPLC
                 
         }
 
+        //窗口关闭时执行
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (mit == null)
