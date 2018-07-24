@@ -100,6 +100,7 @@ namespace serial_FXPLC
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnFindSerialPort = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -126,7 +127,7 @@ namespace serial_FXPLC
             // 
             // openClosePortButton
             // 
-            this.openClosePortButton.Location = new System.Drawing.Point(6, 257);
+            this.openClosePortButton.Location = new System.Drawing.Point(119, 257);
             this.openClosePortButton.Name = "openClosePortButton";
             this.openClosePortButton.Size = new System.Drawing.Size(75, 23);
             this.openClosePortButton.TabIndex = 3;
@@ -136,6 +137,7 @@ namespace serial_FXPLC
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnFindSerialPort);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.openClosePortButton);
             this.groupBox1.Controls.Add(this.portsComboBox);
@@ -843,6 +845,16 @@ namespace serial_FXPLC
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnFindSerialPort
+            // 
+            this.btnFindSerialPort.Location = new System.Drawing.Point(11, 257);
+            this.btnFindSerialPort.Name = "btnFindSerialPort";
+            this.btnFindSerialPort.Size = new System.Drawing.Size(75, 23);
+            this.btnFindSerialPort.TabIndex = 4;
+            this.btnFindSerialPort.Text = "刷新串口";
+            this.btnFindSerialPort.UseVisualStyleBackColor = true;
+            this.btnFindSerialPort.Click += new System.EventHandler(this.btnFindSerialPort_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -946,6 +958,7 @@ namespace serial_FXPLC
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnFindSerialPort;
     }
 }
 

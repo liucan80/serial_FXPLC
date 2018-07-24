@@ -30,7 +30,7 @@ namespace serial_FXPLC
         #region mitsubishi类构造函数
         public mitsubishi(string portName, int sendA, int sendL, int revA, int revL)    //（串口号、写入起始地址、写入字节长度、读取起始地址、读取字节长度）
         {
-            
+
 
             m_sp = new SerialPort();
             m_sp.PortName = portName;
@@ -48,7 +48,7 @@ namespace serial_FXPLC
             m_wData = new byte[sendL];
             m_rData = new byte[revL];
             m_WData = new char[sendL * 2];
-            
+
             if (!m_sp.IsOpen)
             {
                 try
@@ -62,7 +62,7 @@ namespace serial_FXPLC
                 catch (NullReferenceException)
                 {
                     Debug.Print("error");
-                   
+
                 }
                 finally
                 {
@@ -99,7 +99,7 @@ namespace serial_FXPLC
                     }
 
                     //有排队先完成
-                    xStatus= readX();
+                    xStatus = readX();
                     //m_First();
 
                     //循环写部分
@@ -676,7 +676,7 @@ namespace serial_FXPLC
             }
 
             m_sp.Write(list.ToArray(), 0, list.Count);
-           
+
             //MessageBox.Show("已发送成功!");
             for (int i = 0; i < 5; i++)
             {
@@ -691,30 +691,30 @@ namespace serial_FXPLC
                     if (Len == 1)   //非写入或出错状态
                     {
                         outChar = RecieveBuf;
-                      
+
                     }
                     else   //写入状态，读取返回数据
                     {
-                       
-                            Char[] outChar2 = new Char[Len - 4];
-                            Array.Copy(RecieveBuf, 1, outChar2, 0, Len - 4);
-                            outChar = outChar2;
-                            
+
+                        Char[] outChar2 = new Char[Len - 4];
+                        Array.Copy(RecieveBuf, 1, outChar2, 0, Len - 4);
+                        outChar = outChar2;
+                        xStatus = outChar;
                         //Convert.ToString();
-                              return outChar;
+                        return outChar;
                     }
                 }
-               
-              
+
+
             }
             return null;
-           
-        }
 
+        }
+       
       
     }
-    
 }
+
 
      
 
